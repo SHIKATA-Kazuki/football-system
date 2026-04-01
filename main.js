@@ -13,6 +13,7 @@ const teamColors = {
     kashiwa:  { name: '柏',     color: 'rgba(255,255,0,0.92)',   text: '#fff' },
     gohsaka:   { name: 'G大阪',     color: 'rgba(0, 0, 255, 0.92)',    text: '#fff' },
     hiroshima:  { name: '広島',     color: 'rgba(81,48,143, 0.92)',      text: '#fff' },        
+    shimizu:  { name: '清水',     color: 'rgb(240, 146, 5)',      text: '#003D6B' },        
     kobe_AwayVer:   { name: '神戸',    color: 'rgba(220, 20, 60, 0.92)', text: '#fff' },
     kobe_30th:   { name: '神戸',    color: 'rgba(220, 20, 60, 0.92)', text: '#fff' },
     marinos_AwayVer:{ name: '横浜FM', color: 'rgba(0, 0, 200, 0.9)',     text: '#fff' },
@@ -60,6 +61,11 @@ const teamStyles = {
     name: '神戸 ',
     style: 'linear-gradient(40deg, white 0 45%, black 25% 65%, white 55% 100%)',
     text: '#e6b422'
+  },
+  shimizu: {
+    name: '清水 ',
+    style: 'rgb(240, 146, 5)',
+    text: '#003D6B'
   },
   kobe_30th: {
     name: '神戸 ',
