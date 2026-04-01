@@ -13,7 +13,7 @@
     .section-title { margin: 8px 0; font-size: 18px; }
 
     input, select { margin: 4px; padding: 5px; }
-    input[type="number"] { width: 38px; }
+    input[type="number"] { width: 30px; }
     input[type="text"] { width: 80px; }
 
     .submit-btn { padding: 8px 100px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
@@ -21,6 +21,9 @@
 
     #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; }
     #info {text-align: center; 	margin: 15px;}
+    #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
+    #inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
+    /* #info {text-align: center; 	margin: 15px; width: 621px; height: 700px} */
     .infopart {margin: 15px;}
     /* センターライン */
     .center-line {
@@ -140,12 +143,12 @@
     .legend .home-chip { background: rgba(220, 20, 60, 0.92); }
     .legend .away-chip { background: rgba(255,255,255,0.92); color: #000; }
     .forms-wrapper {
-      background: #004400;
-      padding: 12px; width: 820px; min-width: 280px; border-radius: 8px; 
-      display: flex;
-      justify-content: space-around;
-      gap: 20px;
-      align-items: flex-start;
+        background: #004400;
+        padding: 12px; width: 820px; min-width: 280px; border-radius: 8px; 
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        align-items: flex-start;
     }    
     .sliderpart {
       background: #004400;
@@ -159,17 +162,16 @@
       justify-content:space-around;	
     }      
     .form-block {
+        display: flex; flex-wrap: wrap;
         padding: 0 20px;
     }
 
     .home-block {
-        display: absolute;
         justify-content: space-around;
         /* border-right: 2px solid rgba(255,255,255,0.4); */
     }
 
     .away-block {
-        display: absolute;
         justify-content: space-around;
     }
 
@@ -480,17 +482,17 @@
       const container = document.getElementById(containerId);
       container.innerHTML = "";
       var role ={ 
-         0:'Goal keeper     ',
-         1:'Side(R)         ',
-         2:'Defender        ',
-         3:'Defender        ',
-         4:'Side(L)         ',
-         5:'Anchor          ',
-         6:'Atack(R)        ',
-         7:'Box to Box      ',
-         8:'Striker         ',
-         9:'Ace             ',
-        10:'Atack(L)        ',
+         0:'GK        ',
+         1:'Back(R)   ',
+         2:'Back      ',
+         3:'Back      ',
+         4:'Back(L)   ',
+         5:'Anchor    ',
+         6:'Atack(R)  ',
+         7:'Box to Box',
+         8:'Striker   ',
+         9:'Ace       ',
+        10:'Atack(L)  ',
       }
       let numbers;
       if (containerId === "inputsHome") {
