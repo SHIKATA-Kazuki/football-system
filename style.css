@@ -1,0 +1,228 @@
+:root {
+  --size: 0.8;
+}
+body { background-color: #006600; margin: 0; font-family: sans-serif; color: white; }
+h1 { text-align: center; padding: 16px 20px; }
+
+.main { display: flex; flex-wrap: wrap; margin: 0 auto; justify-content: center; gap: 20px; padding: 20px; }
+/* .main { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; gap: 20px; padding: 20px; } */
+.form-container { background: #004400; padding: 12px; width: 340px; min-width: 280px; border-radius: 8px; }
+.section-title { margin: 8px 0; font-size: 18px; }
+
+input, select { margin: 4px; padding: 5px; }
+input[type="number"] { width: 30px; }
+input[type="text"] { width: 80px; }
+
+.submit-btn { padding: 8px 50px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
+.submit-btn:hover { filter: brightness(1.1); }
+
+#field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: calc(var(--size)*5px); }
+/* #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; } */
+#info {text-align: center; 	margin: 15px;}
+#inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
+#inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
+/* #info {text-align: center; 	margin: 15px; width: 621px; height: 700px} */
+.infopart {margin: 15px;}
+
+/* センターライン */
+.center-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: calc(var(--size)*1.5px) solid white;
+}
+/* センターサークル */
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--size)*200px);
+  height: calc(var(--size)*200px);
+  margin: calc(-1*var(--size)*100px) 0 0 calc(-1*var(--size)*100px);
+  border: calc(var(--size)*1.5px) solid white;
+  border-radius: 50%;
+}
+/* ペナルティエリア */
+.penalty-box {
+  position: absolute;
+  width: calc(var(--size)*220px); height: calc(var(--size)*90px);
+  /* width: 440px; height: 180px; */
+  left: 50%;
+  margin-left: calc(-1*var(--size)*110px);
+  /* margin-left: -220px; */
+  border: calc(var(--size)*1.5px) solid white;
+}
+.penalty-box.top { bottom: 0; border-bottom: none; }
+.penalty-box.bottom { top: 0; border-top: none; }
+
+/* ゴールエリア */
+.goal-box {
+  position: absolute;
+  width: calc(var(--size)*120px); height: calc(var(--size)*30px);
+  /* width: 240px; height: 60px; */
+  left: 50%;
+  margin-left: calc(-1*var(--size)*60px);
+  /* margin-left: -120px; */
+  border: calc(var(--size)*1.5px) solid white;
+}
+.goal-box.top { bottom: 0; border-bottom: none; }
+.goal-box.bottom { top: 0; border-top: none; }
+
+/* ペナルティスポット */
+.penalty-spot {
+  position: absolute;
+  width: calc(var(--size)*5px);
+  height: calc(var(--size)*5px);
+  background: white;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -calc(var(--size)*5px);
+}
+.penalty-spot.top { top: 120px; }
+.penalty-spot.bottom { bottom: 120px; }
+
+/* センタースポット */
+.center-spot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  /* margin: 0 0 0 0; */
+  margin: -2.5px 0 0 -2.5px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* コーナーアーク */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: calc(var(--size)*1.5px) solid white;
+  border-radius: 50%;
+}
+.corner.tl { top: -10px; left: -10px; }
+.corner.tr { top: -10px; right: -10px; }
+.corner.bl { bottom: -10px; left: -10px; }
+.corner.br { bottom: -10px; right: -10px; }
+
+.player { 
+  position: absolute; 
+  width: calc(var(--size)*45px); height: calc(var(--size)*37px); 
+  /* width: 80px; height: 60px;  */
+  background-color: #fff; 
+  color: #000; 
+  border-radius: 50%; 
+  text-align: center; 
+  line-height: 1.2; 
+  font-size: calc(var(--size)*22px);
+  /* font-weight: bold;  */
+  padding-top: calc(var(--size)*6.25px); 
+  box-shadow: 0 0 5px #000; 
+  transform: translate(-50%, -50%); 
+  transition: left 0.7s ease, top 0.7s ease; 
+}
+.player.home {
+  background: 
+    linear-gradient(
+      40deg,                   /* 斜めの角度 */
+      transparent 0 45%,       /* 最初は透明 */
+      black 25% 65%,           /* 真ん中だけ白の帯 */
+      transparent 55% 100%     /* その後また透明 */
+    ),
+    crimson;                   /* ベース色 */
+  border: 1px solid #fff;
+  color: #fff;
+}
+    
+.opponent { background-color:  rgba(255,255,255,0.92); color: #000;}
+
+.legend { margin-top: 0px; font-size: 12px; opacity: 0.9; }
+.legend span { display: inline-block; padding: 2px 6px; border-radius: 12px; margin-right: 6px; }
+.legend .home-chip { background: rgba(220, 20, 60, 0.92); }
+.legend .away-chip { background: rgba(255,255,255,0.92); color: #000; }
+.forms-wrapper {
+    background: #004400;
+    padding: 5px; width: 470px; min-width: 280px; border-radius: 8px; 
+    /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: flex-start;
+}    
+.sliderpart {
+  background: #004400;
+  padding: 5px; width: 470px; min-width: 280px; border-radius: 10px; 
+  /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  justify-content:space-around;	
+}      
+.form-block {
+    display: flex; flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.home-block {
+    justify-content: space-around;
+    /* border-right: 2px solid rgba(255,255,255,0.4); */
+}
+
+.away-block {
+    justify-content: space-around;
+}
+
+.number-input {
+  width: 50px;
+}
+.name-input {
+  width: 100px;
+}
+.formation-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0 10px;
+  /* margin: 8px 0 20px; */
+}
+
+.formation-buttons button {
+  background: #008800;
+  border: none;
+  padding: 10px 13px;
+  /* padding: 20px 26px; */
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.formation-buttons button:hover {
+  filter: brightness(1.2);
+}
+
+.formation-buttons button.active {
+  background: #cc0000;
+}
+.para{
+    width: 200%;
+}
+
+.switch{
+  width: 20%
+}
+.tops{
+  width: 50%
+}
+
+.whichpara{
+  font-size: 80%;
+}
