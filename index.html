@@ -16,16 +16,17 @@
     input[type="number"] { width: 30px; }
     input[type="text"] { width: 80px; }
 
-    .submit-btn { padding: 8px 100px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
+    .submit-btn { padding: 8px 50px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
     .submit-btn:hover { filter: brightness(1.1); }
 
-    #field { position: relative; width: 388px; height: 600px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; }
+    #field { position: relative; width: 388px; height: 600px; background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: 5px; }
     /* #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; } */
     #info {text-align: center; 	margin: 15px;}
     #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
     #inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
     /* #info {text-align: center; 	margin: 15px; width: 621px; height: 700px} */
     .infopart {margin: 15px;}
+
     /* センターライン */
     .center-line {
       position: absolute;
@@ -33,7 +34,7 @@
       left: 0;
       width: 100%;
       height: 0;
-      border-bottom: 3px solid white;
+      border-bottom: 1.5px solid white;
     }
     /* センターサークル */
     .center-circle {
@@ -43,7 +44,7 @@
       width: 200px;
       height: 200px;
       margin: -100px 0 0 -100px;
-      border: 3px solid white;
+      border: 1.5px solid white;
       border-radius: 50%;
     }
     /* ペナルティエリア */
@@ -54,7 +55,7 @@
       left: 50%;
       margin-left: -110px;
       /* margin-left: -220px; */
-      border: 3px solid white;
+      border: 1.5px solid white;
     }
     .penalty-box.top { bottom: 0; border-bottom: none; }
     .penalty-box.bottom { top: 0; border-top: none; }
@@ -67,7 +68,7 @@
       left: 50%;
       margin-left: -60px;
       /* margin-left: -120px; */
-      border: 3px solid white;
+      border: 1.5px solid white;
     }
     .goal-box.top { bottom: 0; border-bottom: none; }
     .goal-box.bottom { top: 0; border-top: none; }
@@ -75,8 +76,8 @@
     /* ペナルティスポット */
     .penalty-spot {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 5px;
+      height: 5px;
       background: white;
       border-radius: 50%;
       left: 50%;
@@ -90,9 +91,10 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 10px;
-      height: 10px;
-      margin: -5px 0 0 -5px;
+      width: 5px;
+      height: 5px;
+      /* margin: 0 0 0 0; */
+      margin: -2.5px 0 0 -2.5px;
       background: white;
       border-radius: 50%;
     }
@@ -100,15 +102,15 @@
     /* コーナーアーク */
     .corner {
       position: absolute;
-      width: 40px;
-      height: 40px;
-      border: 3px solid white;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid white;
       border-radius: 50%;
     }
-    .corner.tl { top: -20px; left: -20px; }
-    .corner.tr { top: -20px; right: -20px; }
-    .corner.bl { bottom: -20px; left: -20px; }
-    .corner.br { bottom: -20px; right: -20px; }
+    .corner.tl { top: -10px; left: -10px; }
+    .corner.tr { top: -10px; right: -10px; }
+    .corner.bl { bottom: -10px; left: -10px; }
+    .corner.br { bottom: -10px; right: -10px; }
 
     .player { 
       position: absolute; 
@@ -147,7 +149,7 @@
     .legend .away-chip { background: rgba(255,255,255,0.92); color: #000; }
     .forms-wrapper {
         background: #004400;
-        padding: 12px; width: 520px; min-width: 280px; border-radius: 8px; 
+        padding: 5px; width: 470px; min-width: 280px; border-radius: 8px; 
         /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
         display: flex;
         justify-content: space-around;
@@ -156,10 +158,10 @@
     }    
     .sliderpart {
       background: #004400;
-      padding: 12px; width: 520px; min-width: 280px; border-radius: 8px; 
+      padding: 5px; width: 470px; min-width: 280px; border-radius: 10px; 
       /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
       display: flex;
-      gap: 20px;
+      gap: 5px;
       align-items: flex-start;
       justify-content: center;
       flex-wrap: wrap;
@@ -225,7 +227,7 @@
     }
 
     .whichpara{
-      font-size: 100%;
+      font-size: 80%;
     }
   </style>
 </head>
@@ -354,19 +356,19 @@
         <label class="whichpara">3back化</label>          
         <input type="range" id="sidebackSlider" min="0" max="1" step="0.02" value="0.5" class = "tops">
       </div>  
-      <div class="forms-wrapper  infopart">
-        <div class="form-block home-block">      
-          <form id="playerFormHome">
-            <button class="submit-btn" type="submit">表示</button>            
-            <div id="inputsHome"></div>
-          </form>
-        </div>
-        <div class="form-block away-block">
-          <form id="playerFormAway">
-            <button class="submit-btn" type="submit">表示</button>              
-            <div id="inputsAway"></div>
-          </form>
-        </div>
+    </div>
+    <div class="forms-wrapper  infopart">
+      <div class="form-block home-block">      
+        <form id="playerFormHome">
+          <button class="submit-btn" type="submit">表示</button>            
+          <div id="inputsHome"></div>
+        </form>
+      </div>
+      <div class="form-block away-block">
+        <form id="playerFormAway">
+          <button class="submit-btn" type="submit">表示</button>              
+          <div id="inputsAway"></div>
+        </form>
       </div>
     </div>
   </div>
