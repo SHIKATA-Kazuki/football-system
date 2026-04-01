@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <title>フォーメーション</title>
   <style>
+    :root {
+      --size: 0.8;
+    }
     body { background-color: #006600; margin: 0; font-family: sans-serif; color: white; }
     h1 { text-align: center; padding: 16px 20px; }
 
@@ -19,7 +22,7 @@
     .submit-btn { padding: 8px 50px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
     .submit-btn:hover { filter: brightness(1.1); }
 
-    #field { position: relative; width: 388px; height: 600px; background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: 5px; }
+    #field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: 5px; }
     /* #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; } */
     #info {text-align: center; 	margin: 15px;}
     #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
@@ -34,28 +37,28 @@
       left: 0;
       width: 100%;
       height: 0;
-      border-bottom: 1.5px solid white;
+      border-bottom: calc(var(--size)*1.5px) solid white;
     }
     /* センターサークル */
     .center-circle {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 200px;
-      height: 200px;
+      width: calc(var(--size)*200px);
+      height: calc(var(--size)*200px);
       margin: -100px 0 0 -100px;
-      border: 1.5px solid white;
+      border: calc(var(--size)*1.5px) solid white;
       border-radius: 50%;
     }
     /* ペナルティエリア */
     .penalty-box {
       position: absolute;
-      width: 220px; height: 90px;
+      width: calc(var(--size)*220px); height: calc(var(--size)*90px);
       /* width: 440px; height: 180px; */
       left: 50%;
-      margin-left: -110px;
+      margin-left: calc(-1*var(--size)*110px);
       /* margin-left: -220px; */
-      border: 1.5px solid white;
+      border: calc(var(--size)*1.5px) solid white;
     }
     .penalty-box.top { bottom: 0; border-bottom: none; }
     .penalty-box.bottom { top: 0; border-top: none; }
@@ -63,12 +66,12 @@
     /* ゴールエリア */
     .goal-box {
       position: absolute;
-      width: 120px; height: 30px;
+      width: calc(var(--size)*120px); height: calc(var(--size)*30px);
       /* width: 240px; height: 60px; */
       left: 50%;
-      margin-left: -60px;
+      margin-left: calc(-1*var(--size)*60px);
       /* margin-left: -120px; */
-      border: 1.5px solid white;
+      border: calc(var(--size)*1.5px) solid white;
     }
     .goal-box.top { bottom: 0; border-bottom: none; }
     .goal-box.bottom { top: 0; border-top: none; }
@@ -104,7 +107,7 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      border: 1.5px solid white;
+      border: calc(var(--size)*1.5px) solid white;
       border-radius: 50%;
     }
     .corner.tl { top: -10px; left: -10px; }
@@ -114,16 +117,16 @@
 
     .player { 
       position: absolute; 
-      width: 40px; height: 30px; 
+      width: calc(var(--size)*45px); height: calc(var(--size)*37px); 
       /* width: 80px; height: 60px;  */
       background-color: #fff; 
       color: #000; 
       border-radius: 50%; 
       text-align: center; 
       line-height: 1.2; 
-      font-size: 18px;
-      font-weight: bold; 
-      padding-top: 8px; 
+      font-size: calc(var(--size)*22px);
+      /* font-weight: bold;  */
+      padding-top: calc(var(--size)*6.25px); 
       box-shadow: 0 0 5px #000; 
       transform: translate(-50%, -50%); 
       transition: left 0.7s ease, top 0.7s ease; 
@@ -406,8 +409,8 @@
       },
       marinos: {
         name: '横浜FM',
-        style: 'linear-gradient(to bottom, blue 0%, blue 66%, white 66%, white 85%, red 85%, red 100%)',
-        text: '#bbb'
+        style: 'linear-gradient(to bottom, blue 0%, blue 72%, white 72%, white 90%, red 90%, red 100%)',
+        text: '#fff'
       },
       antlers:{ 
         name: '鹿島',   
@@ -690,7 +693,7 @@
         el.className = isOpponent ? "player away" : "player home";
         el.style.left = `${positions[i][0]}%`;
         el.style.top = `${positions[i][1]}%`;
-        el.innerHTML = `<strong>#${players[i].number}</strong>`;
+        el.innerHTML = `<strong>${players[i].number}</strong>`;
       }
     }
 
