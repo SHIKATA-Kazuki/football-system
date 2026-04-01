@@ -22,7 +22,7 @@
     .submit-btn { padding: 8px 50px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
     .submit-btn:hover { filter: brightness(1.1); }
 
-    #field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: 5px; }
+    #field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: calc(var(--size)*5px); }
     /* #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; } */
     #info {text-align: center; 	margin: 15px;}
     #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
@@ -46,7 +46,7 @@
       left: 50%;
       width: calc(var(--size)*200px);
       height: calc(var(--size)*200px);
-      margin: -100px 0 0 -100px;
+      margin: calc(-1*var(--size)*100px) 0 0 calc(-1*var(--size)*100px);
       border: calc(var(--size)*1.5px) solid white;
       border-radius: 50%;
     }
@@ -79,12 +79,12 @@
     /* ペナルティスポット */
     .penalty-spot {
       position: absolute;
-      width: 5px;
-      height: 5px;
+      width: calc(var(--size)*5px);
+      height: calc(var(--size)*5px);
       background: white;
       border-radius: 50%;
       left: 50%;
-      margin-left: -5px;
+      margin-left: -calc(var(--size)*5px);
     }
     .penalty-spot.top { top: 120px; }
     .penalty-spot.bottom { bottom: 120px; }
