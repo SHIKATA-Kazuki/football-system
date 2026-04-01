@@ -1,7 +1,7 @@
 :root {
   --size: 0.8;
   --cell_size: calc(var(--size)*750px);
-  --cell_width: calc(var(--size)*410px);
+  --cell_width: calc(var(--size)*400px);
   --filter_back_color: rgb(205 205 205 / 40%);
   --borer_color: rgba(255, 255, 255, 0.88);
   --boderline_color: #4d4d4d;
