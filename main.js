@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
 const homeChip = document.querySelector('.home-chip');
 const awayChip = document.querySelector('.away-chip');
 const homeSelect = document.getElementById('homeTeamSelect');
@@ -184,8 +184,8 @@ const relativeFormations_4123 = [
   [0, 13], [27, -17], [15, -4], [0, -22], [-15, -4],  [-27, -17]
 ];
 const relativeFormations_4141 = [
-  [0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
-  [0, 13], [37, -12], [12, -4], [0, -22], [-12, -4], [-37, -12]
+  [0, 48], [37, 28], [13, 30], [-13, 30], [-37, 28],
+  [0, 13], [37, -6], [14, -4], [0, -22], [-14, -4], [-37, -6]
 ];
 const relativeFormations_4150 = [
   [0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
@@ -376,13 +376,12 @@ document.getElementById('awayTeamSelect').addEventListener('change', e => {
 
 // ホーム側
 document.querySelectorAll('.home-formations button').forEach(btn => {
-  btn.addEventListener('click', e => {
-    // ボタンの見た目更新
-    document.querySelectorAll('.home-formations button').forEach(b => b.classList.remove('active'));
-    e.target.classList.add('active');
-
-    // フォーメーション切り替え
-    const f = e.target.dataset.formation;
+    btn.addEventListener('click', e => {
+      document.querySelectorAll('.home-formations button').forEach(b => b.classList.remove('active'));
+      const button = e.currentTarget; // ← これに変更
+      button.classList.add('active');
+      const f = button.dataset.formation; // ← ここも修正
+    
     const players = readPlayersFromForm(document.getElementById("playerFormHome"));
     const pos = formations[f];
     if (pos) placePlayers(players, pos, false);
@@ -391,11 +390,12 @@ document.querySelectorAll('.home-formations button').forEach(btn => {
 
 // アウェイ側
 document.querySelectorAll('.away-formations button').forEach(btn => {
-  btn.addEventListener('click', e => {
-    document.querySelectorAll('.away-formations button').forEach(b => b.classList.remove('active'));
-    e.target.classList.add('active');
-
-    const f = e.target.dataset.formation;
+    btn.addEventListener('click', e => {
+      document.querySelectorAll('.away-formations button').forEach(b => b.classList.remove('active'));
+      const button = e.currentTarget; // ← これに変更
+      button.classList.add('active');
+      const f = button.dataset.formation; // ← ここも修正
+    
     const players = readPlayersFromForm(document.getElementById("playerFormAway"));
     const pos = formations[f];
     if (pos) {
