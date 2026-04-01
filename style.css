@@ -1,23 +1,47 @@
 :root {
   --size: 0.8;
+  --cell_size: calc(var(--size)*750px);
+  --cell_width: calc(var(--size)*430px);
+  --filter_back_color: rgb(205 205 205 / 40%);
+  --borer_color: rgba(255, 255, 255, 0.88);
+  --boderline_color: #4d4d4d;
 }
-body { background-color: #006600; margin: 0; font-family: sans-serif; color: white; }
+
+body { background-color: #1b1b1b; margin: 0; font-family: sans-serif; color: var(--borer_color); }
 h1 { text-align: center; padding: 16px 20px; }
 
-.main { display: flex; flex-wrap: wrap; margin: 0 auto; justify-content: center; gap: 20px; padding: 20px; }
-/* .main { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; gap: 20px; padding: 20px; } */
+.main { 
+  display: flex; flex-wrap: wrap; margin: 0 auto; 
+  justify-content: center; 
+  /* vertical-align:  middle;   */
+  display:  table-cell; 
+  gap: 20px; padding: 20px; 
+}
+/* .main { display: flex; flex-wrap: wrap; margin: 0 auto; justify-content: center; gap: 20px; padding: 20px; } */
+
 .form-container { background: #004400; padding: 12px; width: 340px; min-width: 280px; border-radius: 8px; }
 .section-title { margin: 8px 0; font-size: 18px; }
+
+.centering_item {
+    display: inline-block;      /* インラインブロックにする */
+    vertical-align:  middle;    
+    height: var(--cell_size)px;           
+    width: var(--cell_width)px;           
+    margin: 50px;                
+}
 
 input, select { margin: 4px; padding: 5px; }
 input[type="number"] { width: 30px; }
 input[type="text"] { width: 80px; }
 
-.submit-btn { padding: 8px 50px; background-color: #00cc00; color: white; border: none; cursor: pointer; border-radius: 6px; }
+.submit-btn { padding: 8px 50px; background-color: #63a5a8; color: var(--borer_color); border: none; cursor: pointer; border-radius: 6px; }
 .submit-btn:hover { filter: brightness(1.1); }
 
-#field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); background: linear-gradient(#228822, #006600); border: 2.5px solid rgb(255, 255, 255); border-radius: calc(var(--size)*5px); }
-/* #field { position: relative; width: 621px; height: 960px; background: linear-gradient(#228822, #006600); border: 5px solid rgb(255, 255, 255); border-radius: 10px; } */
+#field { position: relative; width: calc(var(--size)*388px); height: calc(var(--size)*600px); 
+  background: linear-gradient(rgba(9,49,41, 0.7), rgba(17,51,30, 0.7)); 
+  border: 2.5px solid var(--borer_color); border-radius: calc(var(--size)*5px); 
+}
+
 #info {text-align: center; 	margin: 15px;}
 #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
 #inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
@@ -31,7 +55,7 @@ input[type="text"] { width: 80px; }
   left: 0;
   width: 100%;
   height: 0;
-  border-bottom: calc(var(--size)*1.5px) solid white;
+  border-bottom: calc(var(--size)*1.5px) solid var(--borer_color);
 }
 /* センターサークル */
 .center-circle {
@@ -41,7 +65,7 @@ input[type="text"] { width: 80px; }
   width: calc(var(--size)*200px);
   height: calc(var(--size)*200px);
   margin: calc(-1*var(--size)*100px) 0 0 calc(-1*var(--size)*100px);
-  border: calc(var(--size)*1.5px) solid white;
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
   border-radius: 50%;
 }
 /* ペナルティエリア */
@@ -52,7 +76,7 @@ input[type="text"] { width: 80px; }
   left: 50%;
   margin-left: calc(-1*var(--size)*110px);
   /* margin-left: -220px; */
-  border: calc(var(--size)*1.5px) solid white;
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
 }
 .penalty-box.top { bottom: 0; border-bottom: none; }
 .penalty-box.bottom { top: 0; border-top: none; }
@@ -65,7 +89,7 @@ input[type="text"] { width: 80px; }
   left: 50%;
   margin-left: calc(-1*var(--size)*60px);
   /* margin-left: -120px; */
-  border: calc(var(--size)*1.5px) solid white;
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
 }
 .goal-box.top { bottom: 0; border-bottom: none; }
 .goal-box.bottom { top: 0; border-top: none; }
@@ -75,7 +99,7 @@ input[type="text"] { width: 80px; }
   position: absolute;
   width: calc(var(--size)*5px);
   height: calc(var(--size)*5px);
-  background: white;
+  background: var(--borer_color);
   border-radius: 50%;
   left: 50%;
   margin-left: -calc(var(--size)*5px);
@@ -92,7 +116,7 @@ input[type="text"] { width: 80px; }
   height: 5px;
   /* margin: 0 0 0 0; */
   margin: -2.5px 0 0 -2.5px;
-  background: white;
+  background: var(--borer_color);
   border-radius: 50%;
 }
 
@@ -101,7 +125,7 @@ input[type="text"] { width: 80px; }
   position: absolute;
   width: 20px;
   height: 20px;
-  border: calc(var(--size)*1.5px) solid white;
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
   border-radius: 50%;
 }
 .corner.tl { top: -10px; left: -10px; }
@@ -113,7 +137,7 @@ input[type="text"] { width: 80px; }
   position: absolute; 
   width: calc(var(--size)*45px); height: calc(var(--size)*37px); 
   /* width: 80px; height: 60px;  */
-  background-color: #fff; 
+  background-color: var(--borer_color); 
   color: #000; 
   border-radius: 50%; 
   text-align: center; 
@@ -134,8 +158,8 @@ input[type="text"] { width: 80px; }
       transparent 55% 100%     /* その後また透明 */
     ),
     crimson;                   /* ベース色 */
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--borer_color);
+  color: var(--borer_color);
 }
     
 .opponent { background-color:  rgba(255,255,255,0.92); color: #000;}
@@ -145,7 +169,7 @@ input[type="text"] { width: 80px; }
 .legend .home-chip { background: rgba(220, 20, 60, 0.92); }
 .legend .away-chip { background: rgba(255,255,255,0.92); color: #000; }
 .forms-wrapper {
-    background: #004400;
+    background: var(--filter_back_color);
     padding: 5px; width: 470px; min-width: 280px; border-radius: 8px; 
     /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
     display: flex;
@@ -154,7 +178,7 @@ input[type="text"] { width: 80px; }
     align-items: flex-start;
 }    
 .sliderpart {
-  background: #004400;
+  background: var(--filter_back_color);
   padding: 5px; width: 470px; min-width: 280px; border-radius: 10px; 
   /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
   display: flex;
@@ -194,11 +218,11 @@ input[type="text"] { width: 80px; }
 }
 
 .formation-buttons button {
-  background: #008800;
+  background: rgb(170 170 170 / 80%);
   border: none;
   padding: 10px 13px;
   /* padding: 20px 26px; */
-  color: white;
+  color: var(--borer_color);
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
@@ -210,7 +234,7 @@ input[type="text"] { width: 80px; }
 }
 
 .formation-buttons button.active {
-  background: #cc0000;
+  background: rgba(172, 3, 3, 0.8);
 }
 .para{
     width: 200%;
@@ -230,4 +254,44 @@ input[type="text"] { width: 80px; }
 img {
     width: 41px;
     height: 41px;
+}
+
+#title {
+  width: calc(0.4*610px) ; height: calc(0.4*142px);
+}
+
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c2c2c;
+  z-index: -1;
+}
+.Paper_v2 {
+  background-image:
+    repeating-linear-gradient(to bottom,
+      transparent 25px,
+      var(--boderline_color) 26px,  var(--boderline_color) 26px,
+      transparent 27px,  transparent 51px, 
+      var(--boderline_color) 52px,  var(--boderline_color) 52px,
+      transparent 53px,  transparent 77px, 
+      var(--boderline_color) 78px,  var(--boderline_color) 78px,
+      transparent 79px,  transparent 103px, 
+      var(--boderline_color) 104px,  var(--boderline_color) 104px,
+      transparent 105px,  transparent 129px, 
+      var(--boderline_color) 130px,  var(--boderline_color) 130px),
+  
+    repeating-linear-gradient(to right,
+      transparent 25px,
+      var(--boderline_color) 26px,  var(--boderline_color) 26px,
+      transparent 27px,  transparent 51px, 
+      var(--boderline_color) 52px,  var(--boderline_color) 52px,
+      transparent 53px,  transparent 77px, 
+      var(--boderline_color) 78px,  var(--boderline_color) 78px,
+      transparent 79px,  transparent 103px, 
+      var(--boderline_color) 104px,  var(--boderline_color) 104px,
+      transparent 105px,  transparent 129px, 
+      var(--boderline_color) 130px,  var(--boderline_color) 130px);
 }
