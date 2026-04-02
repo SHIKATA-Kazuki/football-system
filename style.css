@@ -8,16 +8,32 @@
 }
 
 /* スマホ */
-@media (max-width: 600px) {
+
+/* 📱 スマホ（縦） */
+@media (max-width: 600px) and (orientation: portrait) {
   :root {
     --size: 0.8;
   }
 }
 
-/* iPad（タブレット） */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* 📱 スマホ（横）←必要なら */
+@media (max-width: 600px) and (orientation: landscape) {
+  :root {
+    --size: 0.7;
+  }
+}
+
+/* 📲 タブレット（横）←メイン */
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
     --size: 2;
+  }
+}
+
+/* 📲 タブレット（縦）←微調整したいなら */
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --size: 1.2;
   }
 }
 
