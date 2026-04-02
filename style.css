@@ -10,7 +10,7 @@
 }
 
 /* 📱 スマホ（横）←必要なら */
-@media (max-width: 1100px) and (orientation: landscape) {
+@media (max-width: 2600px) and (orientation: landscape) {
   :root {
     --size: 0.7;
   }
