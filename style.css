@@ -12,7 +12,7 @@
 /* 📱 スマホ（縦） */
 @media (max-width: 600px) and (orientation: portrait) {
   :root {
-    --size: 0.8;
+    --size: 1.2;
   }
 }
 
@@ -26,14 +26,14 @@
 /* 📲 タブレット（横）←メイン */
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
-    --size: 2;
+    --size: 0.8;
   }
 }
 
 /* 📲 タブレット（縦）←微調整したいなら */
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
-    --size: 1.2;
+    --size: 1;
   }
 }
 
