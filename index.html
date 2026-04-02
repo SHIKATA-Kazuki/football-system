@@ -10,8 +10,8 @@
   <script type="module" src="js/main.js"></script>
   <header>        
     <div class="legend infopart">  
-        <img src="figure/title.png" alt="スタメン配置" id="title">      
-        <label>
+        <img src="figure/title.png" alt="スタメン配置" id="title" class="box">      
+        <div class="icon box ">
             <span class="home-chip">神戸</span>:
             <select id="homeTeamSelect">
                 <option value="kobe">神戸</option>
@@ -29,8 +29,8 @@
                 <option value="gohsaka_AwayVer">G大阪(A)</option>
                 <option value="hiroshima_AwayVer">広島(A)</option>
             </select>
-        </label>        
-        <label>
+        </div>        
+        <div class="icon box ">
             <span class="away-chip">Away: 奥側</span>:
             <select id="awayTeamSelect">
                 <option value="kobe">神戸</option>
@@ -48,7 +48,7 @@
                 <option value="gohsaka_AwayVer">G大阪(A)</option>
                 <option value="hiroshima_AwayVer">広島(A)</option>
             </select>
-        </label>  
+        </div>  
     </div>
   </header>
   <div class="main">
@@ -130,7 +130,7 @@
         <input type="range" id="sidebackSlider" min="0" max="1" step="0.02" value="0.5" class = "tops">
       </div>  
     </div>
-    <div class="forms-wrapper  infopart centering_item">
+    <div class="squadnum infopart centering_item">
       <div class="form-block home-block">      
         <form id="playerFormHome">
           <button class="submit-btn" type="submit">表示</button>            
