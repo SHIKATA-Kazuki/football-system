@@ -3,14 +3,14 @@
 /* スマホ */
 
 /* 📱 スマホ（縦） */
-@media (max-width: 600px) and (orientation: portrait) {
+@media (max-width: 1100px) and (orientation: portrait) {
   :root {
     --size: 2;
   }
 }
 
 /* 📱 スマホ（横）←必要なら */
-@media (max-width: 600px) and (orientation: landscape) {
+@media (max-width: 1100px) and (orientation: landscape) {
   :root {
     --size: 0.7;
   }
