@@ -1,7 +1,7 @@
 :root {
   --size: 0.8;
-  --cell_size: calc(var(--size)*750px);
-  --cell_width: calc(var(--size)*400px);
+  --cell_size: calc(var(--size)*500px);
+  --cell_width: calc(var(--size)*310px);
   --filter_back_color: rgb(205 205 205 / 40%);
   --borer_color: rgba(255, 255, 255, 0.88);
   --boderline_color: #4d4d4d;
@@ -11,11 +11,12 @@ body { background-color: #1b1b1b; margin: 0; font-family: sans-serif; color: var
 h1 { text-align: center; padding: 16px 20px; }
 
 .main { 
-  display: flex; flex-wrap: wrap; margin: 0 auto; 
+  display: flex; 
+  flex-wrap: wrap;   /* 横並び固定 */
   justify-content: center; 
-  /* vertical-align:  middle;   */
-  display:  table-cell; 
-  gap: 20px; padding: 20px; 
+  align-items: flex-start; 
+  gap: 20px; 
+  padding: 10px 0px 0px 10px; 
 }
 /* .main { display: flex; flex-wrap: wrap; margin: 0 auto; justify-content: center; gap: 20px; padding: 20px; } */
 
@@ -23,7 +24,7 @@ h1 { text-align: center; padding: 16px 20px; }
 .section-title { margin: 8px 0; font-size: 18px; }
 
 .centering_item {
-    display: inline-block;      /* インラインブロックにする */
+    display: inline-block;
     vertical-align:  middle;    
     height: var(--cell_size)px;           
     width: var(--cell_width)px;           
@@ -164,13 +165,29 @@ input[type="text"] { width: 80px; }
     
 .opponent { background-color:  rgba(255,255,255,0.92); color: #000;}
 
-.legend { margin-top: 0px; font-size: 12px; opacity: 0.9; }
+.legend { 
+  overflow: hidden;
+  margin-top: 0px; font-size: 12px; opacity: 0.9; 
+}
+
+.box{ display: inline-block; }
+
 .legend span { display: inline-block; padding: 2px 6px; border-radius: 12px; margin-right: 6px; }
 .legend .home-chip { background: rgba(220, 20, 60, 0.92); }
 .legend .away-chip { background: rgba(255,255,255,0.92); color: #000; }
 .forms-wrapper {
     background: var(--filter_back_color);
     padding: 5px; width: 470px; min-width: 280px; border-radius: 8px; 
+    /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: flex-start;
+}    
+
+.squadnum {
+    background: var(--filter_back_color);
+    padding: 5px; width: 400px; min-width: 280px; border-radius: 8px; 
     /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
     display: flex;
     justify-content: space-around;
@@ -190,7 +207,8 @@ input[type="text"] { width: 80px; }
   justify-content:space-around;	
 }      
 .form-block {
-    display: flex; flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
     padding: 0 20px;
 }
 
@@ -258,6 +276,11 @@ img {
 
 #title {
   width: calc(0.4*610px) ; height: calc(0.4*142px);
+  padding: 30px 30px 0px 15px;
+}
+
+.icon{
+  padding: 0px 0px 0px 15px;
 }
 
 .bg_pattern {
@@ -294,4 +317,24 @@ img {
       var(--boderline_color) 104px,  var(--boderline_color) 104px,
       transparent 105px,  transparent 129px, 
       var(--boderline_color) 130px,  var(--boderline_color) 130px);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 6px;
+  background: linear-gradient(to right, #00ac897c, #0066ffc2);
+  border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#field,.forms-wrapper {
+  flex-shrink: 0;
 }
