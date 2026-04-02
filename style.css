@@ -27,7 +27,7 @@ h1 { text-align: center; padding: 16px 20px; }
     display: inline-block;
     vertical-align:  middle;    
     height: var(--cell_size)px;           
-    width: var(--cell_width)px;           
+    /* width: var(--cell_width)px;            */
     margin: 50px;                
 }
 
@@ -53,7 +53,7 @@ input[type="text"] { width: 80px; }
   margin: 15px; 
   /* width: 621px; 
   height: 700px */
-  width: calc(1.5*var(--cell_width)px); 
+  width: calc(var(--cell_width)px*1.5); 
 }
 .infopart {margin: 15px;}
 
@@ -240,8 +240,8 @@ input[type="text"] { width: 80px; }
 .formation-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 0px 0 0px;
+  gap: 0px;
+  margin: 0px 5px 0px;
   /* margin: 8px 0 20px; */
 }
 
@@ -255,6 +255,7 @@ input[type="text"] { width: 80px; }
   cursor: pointer;
   font-size: 14px;
   transition: 0.2s;
+  margin: 2px 2px 2px 2px;
 }
 
 img {
