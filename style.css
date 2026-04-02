@@ -33,7 +33,7 @@
 /* 📲 タブレット（縦）←微調整したいなら */
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
-    --size: 1;
+    --size: 0.8;
   }
 }
 
