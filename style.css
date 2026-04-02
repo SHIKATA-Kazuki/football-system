@@ -1,18 +1,11 @@
-:root {
-  --size: 0.8;
-  --cell_size: calc(var(--size)*500px);
-  --cell_width: calc(var(--size)*310px);
-  --filter_back_color: rgb(205 205 205 / 40%);
-  --borer_color: rgba(255, 255, 255, 0.88);
-  --boderline_color: #4d4d4d;
-}
+:root {--size: 0.8;}
 
 /* スマホ */
 
 /* 📱 スマホ（縦） */
 @media (max-width: 600px) and (orientation: portrait) {
   :root {
-    --size: 1.2;
+    --size: 2;
   }
 }
 
@@ -22,21 +15,24 @@
     --size: 0.7;
   }
 }
-
-/* 📲 タブレット（横）←メイン */
+/* 
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
     --size: 0.8;
   }
 }
-
-/* 📲 タブレット（縦）←微調整したいなら */
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
     --size: 0.8;
-  }
+  } 
+}*/
+:root {
+  --cell_size: calc(var(--size)*500px);
+  --cell_width: calc(var(--size)*310px);
+  --filter_back_color: rgb(205 205 205 / 40%);
+  --borer_color: rgba(255, 255, 255, 0.88);
+  --boderline_color: #4d4d4d;
 }
-
 body { background-color: #1b1b1b; margin: 0; font-family: sans-serif; color: var(--borer_color); }
 h1 { text-align: center; padding: 16px 20px; }
 
