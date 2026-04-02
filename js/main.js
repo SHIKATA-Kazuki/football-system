@@ -7,23 +7,28 @@ import { initializeFormationButtons, initializeSliders, initializeFormSubmits } 
 // configは？
 
 document.addEventListener("DOMContentLoaded", () => {
+  const homeSelect = document.getElementById('homeTeamSelect');
+  const awaySelect = document.getElementById('awayTeamSelect');
   // ホーム変更イベント
-  // const homeChip = document.querySelector('.home-chip');
-  // const awayChip = document.querySelector('.away-chip');
-  // homeSelect.addEventListener('change', () => {
-  //   const t = teamColors[homeSelect.value];
-  //   homeChip.style.background = t.color;
-  //   homeChip.style.color = t.text;
-  //   homeChip.textContent = `${t.name}`;
-  // });
+  const homeChip = document.querySelector('.home-chip');
+  const awayChip = document.querySelector('.away-chip');
+  homeSelect.addEventListener('change', () => {
+    const t = teamColors[homeSelect.value];
+    homeChip.style.background = t.color;
+    homeChip.style.color = t.text;
+    homeChip.textContent = `${t.name}`;
+  });
+
+  homeSelect.addEventListener('change', () => updateHomeColor(homeSelect.value));
+  awaySelect.addEventListener('change', () => updateAwayColor(awaySelect.value));
 
   // アウェイ変更イベント
-  // awaySelect.addEventListener('change', () => {
-  //   const t = teamColors[awaySelect.value];
-  //   awayChip.style.background = t.color;
-  //   awayChip.style.color = t.text;
-  //   awayChip.textContent = `${t.name}`;
-  // });
+  awaySelect.addEventListener('change', () => {
+    const t = teamColors[awaySelect.value];
+    awayChip.style.background = t.color;
+    awayChip.style.color = t.text;
+    awayChip.textContent = `${t.name}`;
+  });
   // ===== 入力欄生成 =====================================================
 
 
