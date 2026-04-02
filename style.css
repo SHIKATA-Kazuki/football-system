@@ -7,6 +7,20 @@
   --boderline_color: #4d4d4d;
 }
 
+/* スマホ */
+@media (max-width: 600px) {
+  :root {
+    --size: 0.8;
+  }
+}
+
+/* iPad（タブレット） */
+@media (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    --size: 2;
+  }
+}
+
 body { background-color: #1b1b1b; margin: 0; font-family: sans-serif; color: var(--borer_color); }
 h1 { text-align: center; padding: 16px 20px; }
 
