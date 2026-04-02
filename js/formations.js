@@ -6,7 +6,7 @@ export const relativeFormations = {
     "424":[[0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
       [-19, 0], [32, -20], [19, 0], [10, -22], [-10, -22], [-32, -20]],
     "442_diamond":[[0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
-      [-30, 3], [30, 3], [0, 8], [15, -22], [0, -6], [-15, -22]], 
+      [0, 8], [30, 3], [0, -6], [15, -22], [-15, -22], [-30, 3]], 
     "4114":[
       [0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
       [0, 8], [32, -22], [0, -6], [11, -22], [-11, -22], [-32, -22]
@@ -106,7 +106,7 @@ export const formations = {
   "433": toAbsolutePositions(relativeFormations["433"], anchor),
   "442_diamond": toAbsolutePositions(relativeFormations["442_diamond"], anchor),
   "4114": toAbsolutePositions(relativeFormations["4114"], anchor),
-  "442_diamond": toAbsolutePositions(relativeFormations["442_diamond"], anchor),
+  "4132": toAbsolutePositions(relativeFormations["4132"], anchor),
   "2134": toAbsolutePositions(relativeFormations["2134"], anchor),
   "4231": toAbsolutePositions(relativeFormations["4231"], anchor),
   "4321": toAbsolutePositions(relativeFormations["4321"], anchor),
