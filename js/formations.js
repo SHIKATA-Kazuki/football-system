@@ -6,7 +6,7 @@ export const relativeFormations = {
       [-15, 8], [28, -5], [15,8], [10, -22], [-10, -22], [-28, -5]],
     "424":[[0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
       [-19, 0], [32, -20], [19, 0], [10, -22], [-10, -22], [-32, -20]],
-    "4132":[[0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
+    "442_diamond":[[0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
       [-30, 3], [30, 3], [0, 8], [15, -22], [0, -6], [-15, -22]], 
     "4114":[
       [0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
@@ -20,7 +20,7 @@ export const relativeFormations = {
       [0, 48], [37, -3], [13, 30], [-13, 30], [-37, -3],
       [0, 8], [32, -22], [0, -6],  [11, -22], [-11, -22],[-32, -22]
     ],
-    "4420":[
+    "442block":[
       [0, 48], [37, 25], [13, 30], [-13, 30], [-37, 25],
       [-13, 11],  [37, 6], [13, 11],[12, -15], [-12, -15], [-37, 6]
     ],
@@ -52,11 +52,11 @@ export const relativeFormations = {
         [0, 48], [25, 23], [0, 30], [-25, 23], [-40,3], 
         [-15, 8], [40, 3], [15, 8], [0, -22], [25, -17], [-25, -17]
     ],
-    "31213":[
+    "343_diamond":[
         [0, 48], [20, 3], [25, 23],  [-25, 23], [-20,3],
         [0, 30], [35, -17], [0, 10], [0, -22], [0, -7], [-35, -17]
     ],
-    "34212222":[
+    "3421R":[
         [0, 48], [40, 3], [25, 23], [0, 30], [-25, 23], 
         [-15, 8], [17, -12], [15, 8], [0, -22], [-17, -12], [-40,3]
     ],
@@ -68,11 +68,11 @@ export const relativeFormations = {
         [0, 48], [25, 23], [0, 30], [-25, 23], [-40,-17], 
         [-15, 8], [40,-17], [15, 8], [0, -22], [17, -12], [-17, -12]
     ],
-    "3232":[
+    "352W":[
         [0, 48], [25, 23], [0, 30], [-25, 23], [-40,-3], 
         [-19, 8], [40, -3], [19, 8], [14, -22], [0, -7], [-14, -22]
     ],
-    "3322":[
+    "352M":[
         [0, 48], [25, 23], [0, 30], [-25, 23], [-40,3], 
         [-19, -1], [40, 3], [19, -1], [14, -22], [0, 8],  [-14, -22]
     ],
@@ -101,24 +101,24 @@ export function toAbsolutePositions(relativeFormations, anchor) {
 export const formations = {
   "442": toAbsolutePositions(relativeFormations["442"], anchor),
   "424": toAbsolutePositions(relativeFormations["424"], anchor),
-  "4420": toAbsolutePositions(relativeFormations["4420"], anchor),
+  "442block": toAbsolutePositions(relativeFormations["442block"], anchor),
   "4123": toAbsolutePositions(relativeFormations["4123"], anchor),
   "4141": toAbsolutePositions(relativeFormations["4141"], anchor),
   "433": toAbsolutePositions(relativeFormations["433"], anchor),
-  "4132": toAbsolutePositions(relativeFormations["4132"], anchor),
+  "442_diamond": toAbsolutePositions(relativeFormations["442_diamond"], anchor),
   "4114": toAbsolutePositions(relativeFormations["4114"], anchor),
-  "4132": toAbsolutePositions(relativeFormations["4132"], anchor),
+  "442_diamond": toAbsolutePositions(relativeFormations["442_diamond"], anchor),
   "2134": toAbsolutePositions(relativeFormations["2134"], anchor),
   "4231": toAbsolutePositions(relativeFormations["4231"], anchor),
   "4321": toAbsolutePositions(relativeFormations["4321"], anchor),
   "4150": toAbsolutePositions(relativeFormations["4150"], anchor),
   "343": toAbsolutePositions(relativeFormations["343"], anchor),
-  "31213": toAbsolutePositions(relativeFormations["31213"], anchor),
-  "34212222": toAbsolutePositions(relativeFormations["34212222"], anchor),
+  "343_diamond": toAbsolutePositions(relativeFormations["343_diamond"], anchor),
+  "3421R": toAbsolutePositions(relativeFormations["3421R"], anchor),
   "3421": toAbsolutePositions(relativeFormations["3421"], anchor),
   "325": toAbsolutePositions(relativeFormations["325"], anchor),
-  "3232": toAbsolutePositions(relativeFormations["3232"], anchor),
-  "3322": toAbsolutePositions(relativeFormations["3322"], anchor),
+  "352W": toAbsolutePositions(relativeFormations["352W"], anchor),
+  "352M": toAbsolutePositions(relativeFormations["352M"], anchor),
   "334": toAbsolutePositions(relativeFormations["334"], anchor),
   "541": toAbsolutePositions(relativeFormations["541"], anchor),
   "235": toAbsolutePositions(relativeFormations["235"], anchor),
