@@ -1,0 +1,121 @@
+:root {--size: 0.8;}
+
+/* スマホ */
+
+/* 📱 スマホ（縦） */
+@media (max-width: 1100px) and (orientation: portrait) {
+  :root {
+    --size: 1;
+  }
+}
+
+/* 📱 スマホ（横）←必要なら */
+@media (max-width: 2600px) and (orientation: landscape) {
+  :root {
+    --size: 0.7;
+  }
+}
+/* 
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+  :root {
+    --size: 0.8;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --size: 0.8;
+  } 
+}*/
+:root {
+  --cell_size: calc(var(--size)*600px);
+  --cell_width: calc(var(--size)*388px);
+  --filter_back_color: rgb(205 205 205 / 40%);
+  --borer_color: rgba(255, 255, 255, 0.88);
+  --boderline_color: #4d4d4d;
+}
+
+/* %%%%%%%%%%%ここからフィールド%%%%%%%%%%%%%%% */
+/* センターライン */
+.center-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: calc(var(--size)*1.5px) solid var(--borer_color);
+}
+/* センターサークル */
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--size)*200px);
+  height: calc(var(--size)*200px);
+  margin: calc(-1*var(--size)*100px) 0 0 calc(-1*var(--size)*100px);
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
+  border-radius: 50%;
+}
+/* ペナルティエリア */
+.penalty-box {
+  position: absolute;
+  width: calc(var(--size)*220px); height: calc(var(--size)*90px);
+  /* width: 440px; height: 180px; */
+  left: 50%;
+  margin-left: calc(-1*var(--size)*110px);
+  /* margin-left: -220px; */
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
+}
+.penalty-box.top { bottom: 0; border-bottom: none; }
+.penalty-box.bottom { top: 0; border-top: none; }
+
+/* ゴールエリア */
+.goal-box {
+  position: absolute;
+  width: calc(var(--size)*120px); height: calc(var(--size)*30px);
+  /* width: 240px; height: 60px; */
+  left: 50%;
+  margin-left: calc(-1*var(--size)*60px);
+  /* margin-left: -120px; */
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
+}
+.goal-box.top { bottom: 0; border-bottom: none; }
+.goal-box.bottom { top: 0; border-top: none; }
+
+/* ペナルティスポット */
+.penalty-spot {
+  position: absolute;
+  width: calc(var(--size)*5px);
+  height: calc(var(--size)*5px);
+  background: var(--borer_color);
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -calc(var(--size)*5px);
+}
+.penalty-spot.top { top: 120px; }
+.penalty-spot.bottom { bottom: 120px; }
+
+/* センタースポット */
+.center-spot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  /* margin: 0 0 0 0; */
+  margin: -2.5px 0 0 -2.5px;
+  background: var(--borer_color);
+  border-radius: 50%;
+}
+
+/* コーナーアーク */
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: calc(var(--size)*1.5px) solid var(--borer_color);
+  border-radius: 50%;
+}
+.corner.tl { top: -10px; left: -10px; }
+.corner.tr { top: -10px; right: -10px; }
+.corner.bl { bottom: -10px; left: -10px; }
+.corner.br { bottom: -10px; right: -10px; }

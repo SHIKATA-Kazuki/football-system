@@ -5,7 +5,7 @@
 /* 📱 スマホ（縦） */
 @media (max-width: 1100px) and (orientation: portrait) {
   :root {
-    --size: 0.6;
+    --size: 1;
   }
 }
 
@@ -27,8 +27,8 @@
   } 
 }*/
 :root {
-  --cell_size: calc(var(--size)*500px);
-  --cell_width: calc(var(--size)*310px);
+  --cell_size: calc(var(--size)*600px);
+  --cell_width: calc(var(--size)*388px);
   --filter_back_color: rgb(205 205 205 / 40%);
   --borer_color: rgba(255, 255, 255, 0.88);
   --boderline_color: #4d4d4d;
@@ -52,8 +52,7 @@ h1 { text-align: center; padding: 16px 20px; }
 .centering_item {
     display: inline-block;
     vertical-align:  middle;    
-    height: var(--cell_size)px;           
-    /* width: var(--cell_width)px;            */
+    height: var(--cell_size)px;    
     margin: 50px;                
 }
 
@@ -66,107 +65,21 @@ input[type="text"] { width: 80px; }
 
 #field { 
   position: relative; 
-  width: calc(var(--size)*388px); 
-  height: calc(var(--size)*600px); 
-  
+  height: var(--cell_size); 
+  width: var(--cell_width);   
   background: linear-gradient(rgba(9,49,41, 0.7), rgba(17,51,30, 0.7)); 
   border: 2.5px solid var(--borer_color); border-radius: calc(var(--size)*5px); 
 }
 
 #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
 #inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
-#info {text-align: center; 	
-  margin: 15px; 
-  /* width: 621px; 
-  height: 700px */
-  width: calc(var(--cell_width)px*1.5); 
+#info {text-align: center;   margin: 15px; 
 }
-.infopart {margin: 15px;}
-
-/* センターライン */
-.center-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-bottom: calc(var(--size)*1.5px) solid var(--borer_color);
+.infopart {
+  margin: 15px;
+  width: calc(1.7*var(--cell_width)); 
+  /* min-width: 280px; */
 }
-/* センターサークル */
-.center-circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: calc(var(--size)*200px);
-  height: calc(var(--size)*200px);
-  margin: calc(-1*var(--size)*100px) 0 0 calc(-1*var(--size)*100px);
-  border: calc(var(--size)*1.5px) solid var(--borer_color);
-  border-radius: 50%;
-}
-/* ペナルティエリア */
-.penalty-box {
-  position: absolute;
-  width: calc(var(--size)*220px); height: calc(var(--size)*90px);
-  /* width: 440px; height: 180px; */
-  left: 50%;
-  margin-left: calc(-1*var(--size)*110px);
-  /* margin-left: -220px; */
-  border: calc(var(--size)*1.5px) solid var(--borer_color);
-}
-.penalty-box.top { bottom: 0; border-bottom: none; }
-.penalty-box.bottom { top: 0; border-top: none; }
-
-/* ゴールエリア */
-.goal-box {
-  position: absolute;
-  width: calc(var(--size)*120px); height: calc(var(--size)*30px);
-  /* width: 240px; height: 60px; */
-  left: 50%;
-  margin-left: calc(-1*var(--size)*60px);
-  /* margin-left: -120px; */
-  border: calc(var(--size)*1.5px) solid var(--borer_color);
-}
-.goal-box.top { bottom: 0; border-bottom: none; }
-.goal-box.bottom { top: 0; border-top: none; }
-
-/* ペナルティスポット */
-.penalty-spot {
-  position: absolute;
-  width: calc(var(--size)*5px);
-  height: calc(var(--size)*5px);
-  background: var(--borer_color);
-  border-radius: 50%;
-  left: 50%;
-  margin-left: -calc(var(--size)*5px);
-}
-.penalty-spot.top { top: 120px; }
-.penalty-spot.bottom { bottom: 120px; }
-
-/* センタースポット */
-.center-spot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  /* margin: 0 0 0 0; */
-  margin: -2.5px 0 0 -2.5px;
-  background: var(--borer_color);
-  border-radius: 50%;
-}
-
-/* コーナーアーク */
-.corner {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: calc(var(--size)*1.5px) solid var(--borer_color);
-  border-radius: 50%;
-}
-.corner.tl { top: -10px; left: -10px; }
-.corner.tr { top: -10px; right: -10px; }
-.corner.bl { bottom: -10px; left: -10px; }
-.corner.br { bottom: -10px; right: -10px; }
 
 .player { 
   position: absolute; 
@@ -219,7 +132,7 @@ input[type="text"] { width: 80px; }
 .forms-wrapper {
     background: var(--filter_back_color);
     padding: 5px; 
-    width: calc(var(--size)*470px); min-width: 270px; 
+    min-width: 270px; 
     border-radius: 8px; 
     /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
     display: flex;
@@ -239,14 +152,13 @@ input[type="text"] { width: 80px; }
 }    
 .sliderpart {
   background: var(--filter_back_color);
-  padding: 5px; width: calc(var(--size)*470px); min-width: 280px; border-radius: 10px; 
+  padding: 5px; min-width: 280px; border-radius: 10px; 
   /* padding: 12px; width: 820px; min-width: 280px; border-radius: 8px;  */
   display: flex;
   gap: 5px;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  /* width: 100%; */
   justify-content:space-around;	
 }      
 .form-block {
@@ -292,8 +204,8 @@ input[type="text"] { width: 80px; }
 }
 
 img {
-    width: calc(var(--size)*55px);
-    height: calc(var(--size)*55px);
+    width: calc(var(--cell_width)*1.7/8);
+    height: calc(var(--cell_width)*1.7/8);
 }
 
 .formation-buttons button:hover {
