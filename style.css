@@ -5,7 +5,7 @@
 /* 📱 スマホ（縦） */
 @media (max-width: 1100px) and (orientation: portrait) {
   :root {
-    --size: 0.2;
+    --size: 0.6;
   }
 }
 
