@@ -321,7 +321,8 @@ img {
 }
 
 #title {
-  width: calc(0.4*610px) ; height: calc(0.4*230px);
+  width: calc(var(--size)*0.4*610px) ; 
+  height: calc(var(--size)*0.4*230px);
   padding: 15px;
   /* padding: 15px 30px 15px 15px; */
 }
