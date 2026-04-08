@@ -82,20 +82,11 @@ export function addTop(t, f_base, volanteSig, backsSig) {
       f0 = formations["4231"];
       const f1 = formations["442"];      
       const f3 = formations["424"];            
-      if(t>0.5){
-        f_base = formations["442"]
-      }else{
-        f_base = formations["4123"]
-      }     
+      f_base = formations["442"] 
       interpolate4(t, f0, f1, f_base, f3);
     }else{
-      const f2 = formations["442_diamond"];      
-      const f3 = formations["4132"];      
-      if(t>0.33){
-        f_base = formations["442_diamond"]
-      }else{
-        f_base = formations["4123"]
-      }     
+      const f2 = formations["4132"];       
+      const f3 = formations["4114"];      
       interpolate4(t, f0, f_base, f2, f3);
     }
   }else{
