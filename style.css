@@ -1,31 +1,5 @@
 :root {--size: 0.8;}
 
-/* スマホ */
-
-/* 📱 スマホ（縦） */
-@media (max-width: 1100px) and (orientation: portrait) {
-  :root {
-    --size: 1;
-  }
-}
-
-/* 📱 スマホ（横）←必要なら */
-@media (max-width: 2600px) and (orientation: landscape) {
-  :root {
-    --size: 0.7;
-  }
-}
-/* 
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
-  :root {
-    --size: 0.8;
-  }
-}
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
-  :root {
-    --size: 0.8;
-  } 
-}*/
 :root {
   --cell_size: calc(var(--size)*600px);
   --cell_width: calc(var(--size)*388px);
@@ -33,6 +7,16 @@
   --borer_color: rgba(255, 255, 255, 0.88);
   --boderline_color: #4d4d4d;
 }
+
+@media (max-width: 1100px) and (orientation: portrait) {
+  :root {
+    --cell_width: 70vw;
+    --cell_size: calc(var(--cell_width) * (600 / 388));
+    --size: 0.5;
+    --info_width: 85vw;
+  }
+}
+
 body { background-color: #1b1b1b; margin: 0; font-family: sans-serif; color: var(--borer_color); }
 h1 { text-align: center; padding: 16px 20px; }
 
@@ -63,21 +47,13 @@ input[type="text"] { width: 80px; }
 .submit-btn { padding: 8px 50px; background-color: #63a5a8; color: var(--borer_color); border: none; cursor: pointer; border-radius: 6px; }
 .submit-btn:hover { filter: brightness(1.1); }
 
-#field { 
-  position: relative; 
-  height: var(--cell_size); 
-  width: var(--cell_width);   
-  background: linear-gradient(rgba(9,49,41, 0.7), rgba(17,51,30, 0.7)); 
-  border: 2.5px solid var(--borer_color); border-radius: calc(var(--size)*5px); 
-}
-
 #inputsHome{display: flex; flex-wrap: wrap; justify-content: center;}
 #inputsAway{display: flex; flex-wrap: wrap; justify-content: center;}
 #info {text-align: center;   margin: 15px; 
 }
 .infopart {
   margin: 15px;
-  width: calc(1.7*var(--cell_width)); 
+  width: var(--info_width); 
   /* min-width: 280px; */
 }
 
@@ -204,9 +180,10 @@ input[type="text"] { width: 80px; }
 }
 
 img {
-    width: calc(var(--cell_width)*1.7/8);
-    height: calc(var(--cell_width)*1.7/8);
+    width: calc(var(--info_width)/8);
+    height: calc(var(--info_width)/8);
 }
+
 
 .formation-buttons button:hover {
   filter: brightness(1.2);

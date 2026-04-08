@@ -1,15 +1,6 @@
 :root {--size: 0.8;}
 
 /* スマホ */
-
-/* 📱 スマホ（縦） */
-@media (max-width: 1100px) and (orientation: portrait) {
-  :root {
-    --size: 1;
-  }
-}
-
-/* 📱 スマホ（横）←必要なら */
 @media (max-width: 2600px) and (orientation: landscape) {
   :root {
     --size: 0.7;
@@ -34,7 +25,23 @@
   --boderline_color: #4d4d4d;
 }
 
-/* %%%%%%%%%%%ここからフィールド%%%%%%%%%%%%%%% */
+
+@media (max-width: 1100px) and (orientation: portrait) {
+  :root {
+    --cell_width: 70vw;
+    --cell_size: calc(var(--cell_width) * (600 / 388));
+    --size: 0.5;
+  }
+}
+
+#field { 
+  position: relative; 
+  height: var(--cell_size); 
+  width: var(--cell_width);   
+  background: linear-gradient(rgba(9,49,41, 0.7), rgba(17,51,30, 0.7)); 
+  border: 2.5px solid var(--borer_color); border-radius: calc(var(--size)*5px); 
+}
+
 /* センターライン */
 .center-line {
   position: absolute;
