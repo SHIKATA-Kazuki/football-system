@@ -3,6 +3,8 @@
 :root {
   --cell_size: calc(var(--size)*600px);
   --cell_width: calc(var(--size)*388px);
+  --info_width: calc(1.7*var(--cell_width));
+  --buttonn_width: calc(var(--info_width)/8);
   --filter_back_color: rgb(205 205 205 / 40%);
   --borer_color: rgba(255, 255, 255, 0.88);
   --boderline_color: #4d4d4d;
@@ -14,6 +16,7 @@
     --cell_size: calc(var(--cell_width) * (600 / 388));
     --size: 0.5;
     --info_width: 85vw;
+    --buttonn_width: calc(var(--info_width)/9);
   }
 }
 
@@ -180,8 +183,8 @@ input[type="text"] { width: 80px; }
 }
 
 img {
-    width: calc(var(--info_width)/8);
-    height: calc(var(--info_width)/8);
+    width: var(--buttonn_width);
+    height: var(--buttonn_width);
 }
 
 
